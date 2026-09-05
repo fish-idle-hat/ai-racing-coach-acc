@@ -10,6 +10,8 @@ This project is currently looking for partners who can help improve the remainin
 
 See `PARTNERS.md` for the current collaboration areas.
 
+Open a GitHub issue with the `Partner collaboration` template if you want to help build the next version.
+
 ## Why It Matters
 
 Most sim-racing improvement tools either show raw telemetry or require manual post-session review. AI Racing Coach - ACC is aimed at a different workflow: drive laps, hear short coaching cues at the right time, then review a focused training plan after the session.
