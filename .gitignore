@@ -1,0 +1,25 @@
+.DS_Store
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build outputs and generated app bundles
+build/
+bin/
+obj/
+*.app/
+*.dSYM/
+
+# Generated driving sessions and reports
+runs/
+submission/
+data/pro_video_references/
+
+# Local secrets / environment
+.env
+.env.*

@@ -1,0 +1,1389 @@
+{
+  "schema": "acc_ai_coach_reference_v1",
+  "created_at": "2026-08-22T18:43:25",
+  "track": "Spa",
+  "car_model": "mclaren_720s_gt3_evo",
+  "reference_type": "personal_best",
+  "source_run": "runs/acc-adaptive-coach-test-1",
+  "source_lap_number": 2,
+  "lap_time_ms": 146260,
+  "lap_time_display": "2:26.260",
+  "lap_profile": {
+    "run": "runs/acc-adaptive-coach-test-1",
+    "lap_number": 2,
+    "row_start": 4299,
+    "row_end": 8547,
+    "lap_time_ms": 146260,
+    "lap_time_display": "2:26.260",
+    "duration_seconds": 146.224,
+    "path_sample": [
+      {
+        "progress": 0.0,
+        "x": -1074.01025,
+        "z": 19.7242031
+      },
+      {
+        "progress": 0.00599521026,
+        "x": -1097.90271,
+        "z": 20.5108147
+      },
+      {
+        "progress": 0.0125924442,
+        "x": -1123.429,
+        "z": 21.3989735
+      },
+      {
+        "progress": 0.01940989,
+        "x": -1150.23474,
+        "z": 22.342001
+      },
+      {
+        "progress": 0.026546482,
+        "x": -1177.77881,
+        "z": 23.3770351
+      },
+      {
+        "progress": 0.0338230953,
+        "x": -1205.19153,
+        "z": 24.4759254
+      },
+      {
+        "progress": 0.0397305042,
+        "x": -1227.40845,
+        "z": 26.03298
+      },
+      {
+        "progress": 0.0438455343,
+        "x": -1242.61133,
+        "z": 27.3244667
+      },
+      {
+        "progress": 0.0467586331,
+        "x": -1252.48608,
+        "z": 28.07641
+      },
+      {
+        "progress": 0.04914303,
+        "x": -1256.08972,
+        "z": 28.2598724
+      },
+      {
+        "progress": 0.05141461,
+        "x": -1251.87183,
+        "z": 27.7972012
+      },
+      {
+        "progress": 0.0538001,
+        "x": -1238.46765,
+        "z": 27.6379528
+      },
+      {
+        "progress": 0.05652469,
+        "x": -1219.6908,
+        "z": 27.057003
+      },
+      {
+        "progress": 0.05983162,
+        "x": -1197.47046,
+        "z": 25.830389
+      },
+      {
+        "progress": 0.0638366044,
+        "x": -1172.575,
+        "z": 24.1178417
+      },
+      {
+        "progress": 0.0684518144,
+        "x": -1144.23413,
+        "z": 22.0543556
+      },
+      {
+        "progress": 0.0737901,
+        "x": -1112.44409,
+        "z": 19.5227947
+      },
+      {
+        "progress": 0.07961932,
+        "x": -1078.23755,
+        "z": 16.81557
+      },
+      {
+        "progress": 0.08592744,
+        "x": -1041.82666,
+        "z": 13.9467688
+      },
+      {
+        "progress": 0.09267811,
+        "x": -1003.83807,
+        "z": 11.2687778
+      },
+      {
+        "progress": 0.0998343,
+        "x": -965.7885,
+        "z": 8.835996
+      },
+      {
+        "progress": 0.107278004,
+        "x": -929.628967,
+        "z": 6.331781
+      },
+      {
+        "progress": 0.114974253,
+        "x": -893.64856,
+        "z": 3.61571121
+      },
+      {
+        "progress": 0.122961715,
+        "x": -856.19635,
+        "z": 0.8229331
+      },
+      {
+        "progress": 0.131159484,
+        "x": -817.6673,
+        "z": -1.73890841
+      },
+      {
+        "progress": 0.139714554,
+        "x": -775.8506,
+        "z": -4.17024755
+      },
+      {
+        "progress": 0.14836061,
+        "x": -728.1374,
+        "z": -5.48245668
+      },
+      {
+        "progress": 0.15699999,
+        "x": -681.3408,
+        "z": -1.42847347
+      },
+      {
+        "progress": 0.165614083,
+        "x": -647.2423,
+        "z": 7.459277
+      },
+      {
+        "progress": 0.1739196,
+        "x": -624.742,
+        "z": 14.85101
+      },
+      {
+        "progress": 0.182263374,
+        "x": -607.9364,
+        "z": 19.23361
+      },
+      {
+        "progress": 0.190493032,
+        "x": -582.7742,
+        "z": 22.0318584
+      },
+      {
+        "progress": 0.198728442,
+        "x": -548.627258,
+        "z": 24.43292
+      },
+      {
+        "progress": 0.207154185,
+        "x": -514.2964,
+        "z": 27.0825329
+      },
+      {
+        "progress": 0.215686709,
+        "x": -481.273529,
+        "z": 29.6349754
+      },
+      {
+        "progress": 0.224397212,
+        "x": -448.869415,
+        "z": 32.299427
+      },
+      {
+        "progress": 0.233112,
+        "x": -421.730225,
+        "z": 35.42632
+      },
+      {
+        "progress": 0.241850838,
+        "x": -400.594543,
+        "z": 38.23172
+      },
+      {
+        "progress": 0.250714272,
+        "x": -381.460541,
+        "z": 40.8906631
+      },
+      {
+        "progress": 0.259653419,
+        "x": -362.0417,
+        "z": 43.7126732
+      },
+      {
+        "progress": 0.268681884,
+        "x": -342.236664,
+        "z": 46.544838
+      },
+      {
+        "progress": 0.2777286,
+        "x": -322.378357,
+        "z": 49.4075
+      },
+      {
+        "progress": 0.286842227,
+        "x": -302.540955,
+        "z": 52.3255959
+      },
+      {
+        "progress": 0.296090037,
+        "x": -282.23877,
+        "z": 55.2612457
+      },
+      {
+        "progress": 0.305360734,
+        "x": -261.749237,
+        "z": 58.1620445
+      },
+      {
+        "progress": 0.3146955,
+        "x": -241.211685,
+        "z": 61.1709633
+      },
+      {
+        "progress": 0.323771447,
+        "x": -221.3678,
+        "z": 64.14087
+      },
+      {
+        "progress": 0.3311438,
+        "x": -205.306,
+        "z": 66.48052
+      },
+      {
+        "progress": 0.336545736,
+        "x": -194.981522,
+        "z": 68.057
+      },
+      {
+        "progress": 0.340785056,
+        "x": -193.080521,
+        "z": 69.13763
+      },
+      {
+        "progress": 0.344517469,
+        "x": -201.399414,
+        "z": 70.1936951
+      },
+      {
+        "progress": 0.3483461,
+        "x": -218.159149,
+        "z": 71.24972
+      },
+      {
+        "progress": 0.352331936,
+        "x": -235.396011,
+        "z": 71.913
+      },
+      {
+        "progress": 0.3564934,
+        "x": -244.727417,
+        "z": 72.61602
+      },
+      {
+        "progress": 0.3606152,
+        "x": -242.371872,
+        "z": 73.24011
+      },
+      {
+        "progress": 0.365189582,
+        "x": -231.162338,
+        "z": 73.5923843
+      },
+      {
+        "progress": 0.370185822,
+        "x": -221.6391,
+        "z": 73.8375854
+      },
+      {
+        "progress": 0.374955,
+        "x": -223.7275,
+        "z": 73.54921
+      },
+      {
+        "progress": 0.379843533,
+        "x": -238.048569,
+        "z": 73.31788
+      },
+      {
+        "progress": 0.385,
+        "x": -262.56604,
+        "z": 73.00845
+      },
+      {
+        "progress": 0.390585363,
+        "x": -292.895172,
+        "z": 72.13731
+      },
+      {
+        "progress": 0.396657437,
+        "x": -326.920471,
+        "z": 70.79999
+      },
+      {
+        "progress": 0.403146267,
+        "x": -362.740784,
+        "z": 69.06343
+      },
+      {
+        "progress": 0.409990221,
+        "x": -400.680328,
+        "z": 66.88063
+      },
+      {
+        "progress": 0.4163235,
+        "x": -435.736938,
+        "z": 64.50482
+      },
+      {
+        "progress": 0.421138,
+        "x": -463.455536,
+        "z": 62.33217
+      },
+      {
+        "progress": 0.424943537,
+        "x": -487.858124,
+        "z": 60.3067932
+      },
+      {
+        "progress": 0.428412944,
+        "x": -511.221832,
+        "z": 58.50088
+      },
+      {
+        "progress": 0.431833327,
+        "x": -532.5106,
+        "z": 56.7492867
+      },
+      {
+        "progress": 0.435211152,
+        "x": -546.3578,
+        "z": 55.05867
+      },
+      {
+        "progress": 0.438699156,
+        "x": -550.5237,
+        "z": 53.3493042
+      },
+      {
+        "progress": 0.442217141,
+        "x": -544.9625,
+        "z": 51.57443
+      },
+      {
+        "progress": 0.446009785,
+        "x": -528.852844,
+        "z": 49.8658066
+      },
+      {
+        "progress": 0.450471133,
+        "x": -504.147522,
+        "z": 47.7082024
+      },
+      {
+        "progress": 0.45552063,
+        "x": -473.3604,
+        "z": 45.2718544
+      },
+      {
+        "progress": 0.4608482,
+        "x": -442.44873,
+        "z": 42.7748
+      },
+      {
+        "progress": 0.465762168,
+        "x": -420.798431,
+        "z": 40.11401
+      },
+      {
+        "progress": 0.4703591,
+        "x": -411.228455,
+        "z": 37.8736153
+      },
+      {
+        "progress": 0.4748581,
+        "x": -414.512848,
+        "z": 35.9708557
+      },
+      {
+        "progress": 0.4797127,
+        "x": -427.83432,
+        "z": 33.42587
+      },
+      {
+        "progress": 0.4852388,
+        "x": -441.7215,
+        "z": 30.6055031
+      },
+      {
+        "progress": 0.491294265,
+        "x": -456.307861,
+        "z": 27.6617889
+      },
+      {
+        "progress": 0.4977745,
+        "x": -469.843,
+        "z": 24.498003
+      },
+      {
+        "progress": 0.5047801,
+        "x": -482.176636,
+        "z": 21.09827
+      },
+      {
+        "progress": 0.5120553,
+        "x": -493.536163,
+        "z": 17.694582
+      },
+      {
+        "progress": 0.5197747,
+        "x": -504.33963,
+        "z": 13.982214
+      },
+      {
+        "progress": 0.5276315,
+        "x": -515.5733,
+        "z": 10.2368412
+      },
+      {
+        "progress": 0.534345031,
+        "x": -527.4397,
+        "z": 6.920834
+      },
+      {
+        "progress": 0.5402663,
+        "x": -544.819153,
+        "z": 3.87151241
+      },
+      {
+        "progress": 0.5459379,
+        "x": -570.87146,
+        "z": 1.00928414
+      },
+      {
+        "progress": 0.551681638,
+        "x": -605.5111,
+        "z": -1.718003
+      },
+      {
+        "progress": 0.5575803,
+        "x": -645.819458,
+        "z": -4.431776
+      },
+      {
+        "progress": 0.563931048,
+        "x": -689.8871,
+        "z": -7.61986351
+      },
+      {
+        "progress": 0.570615649,
+        "x": -733.441833,
+        "z": -10.7539644
+      },
+      {
+        "progress": 0.5775284,
+        "x": -774.6412,
+        "z": -13.4581184
+      },
+      {
+        "progress": 0.584596455,
+        "x": -808.035034,
+        "z": -15.55845
+      },
+      {
+        "progress": 0.5919274,
+        "x": -832.818542,
+        "z": -17.0803661
+      },
+      {
+        "progress": 0.599414349,
+        "x": -848.920837,
+        "z": -18.5222168
+      },
+      {
+        "progress": 0.607271135,
+        "x": -864.8242,
+        "z": -19.366785
+      },
+      {
+        "progress": 0.615294,
+        "x": -881.265869,
+        "z": -19.5165672
+      },
+      {
+        "progress": 0.6231668,
+        "x": -897.380249,
+        "z": -19.05883
+      },
+      {
+        "progress": 0.6291554,
+        "x": -910.0919,
+        "z": -18.5304413
+      },
+      {
+        "progress": 0.6339521,
+        "x": -924.4953,
+        "z": -18.37721
+      },
+      {
+        "progress": 0.6387233,
+        "x": -947.016,
+        "z": -18.1943016
+      },
+      {
+        "progress": 0.6432495,
+        "x": -975.08374,
+        "z": -17.9224453
+      },
+      {
+        "progress": 0.647572637,
+        "x": -1004.86078,
+        "z": -17.709486
+      },
+      {
+        "progress": 0.651919246,
+        "x": -1033.26978,
+        "z": -17.4634247
+      },
+      {
+        "progress": 0.6566462,
+        "x": -1064.0282,
+        "z": -17.4796181
+      },
+      {
+        "progress": 0.661598146,
+        "x": -1098.03113,
+        "z": -17.7223721
+      },
+      {
+        "progress": 0.6665277,
+        "x": -1130.46619,
+        "z": -17.9900513
+      },
+      {
+        "progress": 0.671529233,
+        "x": -1158.51538,
+        "z": -18.12756
+      },
+      {
+        "progress": 0.676799059,
+        "x": -1179.54419,
+        "z": -18.6215973
+      },
+      {
+        "progress": 0.6824693,
+        "x": -1196.26025,
+        "z": -19.4084778
+      },
+      {
+        "progress": 0.688622534,
+        "x": -1215.1698,
+        "z": -20.356842
+      },
+      {
+        "progress": 0.69449544,
+        "x": -1233.07983,
+        "z": -21.2699413
+      },
+      {
+        "progress": 0.698863149,
+        "x": -1249.86,
+        "z": -22.2570343
+      },
+      {
+        "progress": 0.7027595,
+        "x": -1272.1853,
+        "z": -23.3971844
+      },
+      {
+        "progress": 0.7067443,
+        "x": -1299.53662,
+        "z": -24.5302811
+      },
+      {
+        "progress": 0.711224,
+        "x": -1329.77759,
+        "z": -25.4779358
+      },
+      {
+        "progress": 0.716132164,
+        "x": -1359.65161,
+        "z": -26.54628
+      },
+      {
+        "progress": 0.7216477,
+        "x": -1391.0979,
+        "z": -27.4894714
+      },
+      {
+        "progress": 0.7274788,
+        "x": -1422.609,
+        "z": -28.1939812
+      },
+      {
+        "progress": 0.7333329,
+        "x": -1445.291,
+        "z": -28.4922981
+      },
+      {
+        "progress": 0.739385545,
+        "x": -1456.46179,
+        "z": -28.151226
+      },
+      {
+        "progress": 0.7456244,
+        "x": -1455.34045,
+        "z": -27.0700321
+      },
+      {
+        "progress": 0.7520649,
+        "x": -1444.71436,
+        "z": -25.65291
+      },
+      {
+        "progress": 0.7587318,
+        "x": -1425.61816,
+        "z": -24.301075
+      },
+      {
+        "progress": 0.7657343,
+        "x": -1400.68188,
+        "z": -22.8178139
+      },
+      {
+        "progress": 0.7730077,
+        "x": -1371.37561,
+        "z": -21.1739311
+      },
+      {
+        "progress": 0.78048265,
+        "x": -1337.20837,
+        "z": -19.53568
+      },
+      {
+        "progress": 0.7880686,
+        "x": -1298.15076,
+        "z": -17.9605217
+      },
+      {
+        "progress": 0.795948744,
+        "x": -1254.63416,
+        "z": -16.5004711
+      },
+      {
+        "progress": 0.804008842,
+        "x": -1207.51819,
+        "z": -15.2014551
+      },
+      {
+        "progress": 0.8121971,
+        "x": -1158.145,
+        "z": -13.9194517
+      },
+      {
+        "progress": 0.820624948,
+        "x": -1107.96338,
+        "z": -12.6708126
+      },
+      {
+        "progress": 0.829131067,
+        "x": -1059.64929,
+        "z": -11.5742435
+      },
+      {
+        "progress": 0.8377192,
+        "x": -1014.61462,
+        "z": -10.3310595
+      },
+      {
+        "progress": 0.8464481,
+        "x": -976.321045,
+        "z": -8.918742
+      },
+      {
+        "progress": 0.8551367,
+        "x": -945.269165,
+        "z": -7.153858
+      },
+      {
+        "progress": 0.8640006,
+        "x": -919.1523,
+        "z": -5.24499559
+      },
+      {
+        "progress": 0.872909665,
+        "x": -897.991638,
+        "z": -3.63036871
+      },
+      {
+        "progress": 0.8816457,
+        "x": -889.280151,
+        "z": -2.34394622
+      },
+      {
+        "progress": 0.8903695,
+        "x": -896.186646,
+        "z": -0.657160759
+      },
+      {
+        "progress": 0.898961246,
+        "x": -916.2576,
+        "z": 0.2581219
+      },
+      {
+        "progress": 0.907621562,
+        "x": -942.764343,
+        "z": 0.8145395
+      },
+      {
+        "progress": 0.916407764,
+        "x": -967.5344,
+        "z": 1.89064276
+      },
+      {
+        "progress": 0.925393343,
+        "x": -988.1311,
+        "z": 3.47831
+      },
+      {
+        "progress": 0.9344389,
+        "x": -1003.84595,
+        "z": 5.72557259
+      },
+      {
+        "progress": 0.9426446,
+        "x": -1014.56635,
+        "z": 7.93499851
+      },
+      {
+        "progress": 0.9489561,
+        "x": -1020.94385,
+        "z": 9.586438
+      },
+      {
+        "progress": 0.953588247,
+        "x": -1025.33643,
+        "z": 10.7439423
+      },
+      {
+        "progress": 0.9569147,
+        "x": -1027.40674,
+        "z": 11.4887028
+      },
+      {
+        "progress": 0.959524035,
+        "x": -1025.07483,
+        "z": 11.8904285
+      },
+      {
+        "progress": 0.962042749,
+        "x": -1015.13647,
+        "z": 12.4860735
+      },
+      {
+        "progress": 0.964385867,
+        "x": -1000.56885,
+        "z": 13.2053843
+      },
+      {
+        "progress": 0.966864,
+        "x": -983.416748,
+        "z": 13.6633339
+      },
+      {
+        "progress": 0.96936214,
+        "x": -971.681763,
+        "z": 14.273407
+      },
+      {
+        "progress": 0.9719006,
+        "x": -969.202759,
+        "z": 15.1365366
+      },
+      {
+        "progress": 0.9747222,
+        "x": -974.502563,
+        "z": 15.9528885
+      },
+      {
+        "progress": 0.9781192,
+        "x": -986.8719,
+        "z": 16.6032543
+      },
+      {
+        "progress": 0.9822385,
+        "x": -1002.81653,
+        "z": 17.3132324
+      },
+      {
+        "progress": 0.9869078,
+        "x": -1021.01923,
+        "z": 18.0095348
+      },
+      {
+        "progress": 0.992152154,
+        "x": -1041.67908,
+        "z": 18.7171249
+      },
+      {
+        "progress": 0.997836947,
+        "x": -1064.09473,
+        "z": 19.40463
+      }
+    ],
+    "zones": {
+      "La Source": {
+        "sample_count": 495,
+        "entry_speed_kmh": 167.798,
+        "exit_speed_kmh": 192.969,
+        "min_speed_kmh": 60.231,
+        "min_speed_distance_m": 352.854,
+        "max_speed_kmh": 207.812,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 146.456,
+        "max_abs_steer": 0.75,
+        "avg_throttle": 0.7673,
+        "brake_start_distance_m": 223.273,
+        "heavy_brake_start_distance_m": 223.273,
+        "brake_end_distance_m": 341.04,
+        "brake_start_lap_time_ms": 4890,
+        "brake_end_lap_time_ms": 8530,
+        "trail_brake_duration_ms": 3640,
+        "throttle_pickup_distance_m": 353.957,
+        "full_throttle_distance_m": 355.376,
+        "throttle_pickup_lap_time_ms": 9250,
+        "full_throttle_lap_time_ms": 9327,
+        "high_steer_throttle_share": 0.0667,
+        "pedal_overlap_share": 0.0323,
+        "upshift_count": 7,
+        "upshift_events": [
+          {
+            "lap_progress": 0.01390297,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6754,
+            "speed_kmh": 187.930038
+          },
+          {
+            "lap_progress": 0.03353807,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 7535,
+            "speed_kmh": 194.030823
+          },
+          {
+            "lap_progress": 0.0372460522,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 7562,
+            "speed_kmh": 162.042114
+          },
+          {
+            "lap_progress": 0.041355826,
+            "gear_from": 0,
+            "gear_to": 1,
+            "rpm": 7347,
+            "speed_kmh": 122.112114
+          },
+          {
+            "lap_progress": 0.06282262,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 6797,
+            "speed_kmh": 116.547577
+          },
+          {
+            "lap_progress": 0.0733843148,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6961,
+            "speed_kmh": 153.881958
+          },
+          {
+            "lap_progress": 0.08498149,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6620,
+            "speed_kmh": 179.789627
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Eau Rouge/Raidillon/Kemmel": {
+        "sample_count": 512,
+        "entry_speed_kmh": 193.399,
+        "exit_speed_kmh": 249.774,
+        "min_speed_kmh": 193.399,
+        "min_speed_distance_m": 651.158,
+        "max_speed_kmh": 249.774,
+        "max_brake": 0.0,
+        "primary_brake_speed_drop_kmh": null,
+        "max_abs_steer": 0.3,
+        "avg_throttle": 1.0,
+        "brake_start_distance_m": null,
+        "heavy_brake_start_distance_m": null,
+        "brake_end_distance_m": null,
+        "brake_start_lap_time_ms": null,
+        "brake_end_lap_time_ms": null,
+        "trail_brake_duration_ms": null,
+        "throttle_pickup_distance_m": 651.158,
+        "full_throttle_distance_m": 651.158,
+        "throttle_pickup_lap_time_ms": 17682,
+        "full_throttle_lap_time_ms": 17682,
+        "high_steer_throttle_share": 0.0,
+        "pedal_overlap_share": 0.0,
+        "upshift_count": 2,
+        "upshift_events": [
+          {
+            "lap_progress": 0.105519213,
+            "gear_from": 0,
+            "gear_to": 5,
+            "rpm": 6667,
+            "speed_kmh": 208.888245
+          },
+          {
+            "lap_progress": 0.222728908,
+            "gear_from": 0,
+            "gear_to": 6,
+            "rpm": 6727,
+            "speed_kmh": 241.178436
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Les Combes/Malmedy": {
+        "sample_count": 455,
+        "entry_speed_kmh": 249.863,
+        "exit_speed_kmh": 134.43,
+        "min_speed_kmh": 103.924,
+        "min_speed_distance_m": 2432.72,
+        "max_speed_kmh": 261.179,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 154.758,
+        "max_abs_steer": 0.392,
+        "avg_throttle": 0.6857,
+        "brake_start_distance_m": 2236.767,
+        "heavy_brake_start_distance_m": 2239.282,
+        "brake_end_distance_m": 2390.922,
+        "brake_start_lap_time_ms": 41372,
+        "brake_end_lap_time_ms": 44647,
+        "trail_brake_duration_ms": 3275,
+        "throttle_pickup_distance_m": 2394.859,
+        "full_throttle_distance_m": 2412.055,
+        "throttle_pickup_lap_time_ms": 44780,
+        "full_throttle_lap_time_ms": 45365,
+        "high_steer_throttle_share": 0.0,
+        "pedal_overlap_share": 0.0659,
+        "upshift_count": 4,
+        "upshift_events": [
+          {
+            "lap_progress": 0.3221744,
+            "gear_from": 0,
+            "gear_to": 5,
+            "rpm": 7174,
+            "speed_kmh": 244.325912
+          },
+          {
+            "lap_progress": 0.3285591,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6453,
+            "speed_kmh": 196.529373
+          },
+          {
+            "lap_progress": 0.3342507,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 5997,
+            "speed_kmh": 149.5392
+          },
+          {
+            "lap_progress": 0.349402517,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 7063,
+            "speed_kmh": 109.0364
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Bruxelles": {
+        "sample_count": 505,
+        "entry_speed_kmh": 134.336,
+        "exit_speed_kmh": 136.801,
+        "min_speed_kmh": 88.683,
+        "min_speed_distance_m": 3042.848,
+        "max_speed_kmh": 197.388,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 102.398,
+        "max_abs_steer": 0.42,
+        "avg_throttle": 0.5954,
+        "brake_start_distance_m": 2875.367,
+        "heavy_brake_start_distance_m": 2875.367,
+        "brake_end_distance_m": 2978.984,
+        "brake_start_lap_time_ms": 57110,
+        "brake_end_lap_time_ms": 59825,
+        "trail_brake_duration_ms": 2715,
+        "throttle_pickup_distance_m": 3070.911,
+        "full_throttle_distance_m": 3073.753,
+        "throttle_pickup_lap_time_ms": 63235,
+        "full_throttle_lap_time_ms": 63335,
+        "high_steer_throttle_share": 0.0,
+        "pedal_overlap_share": 0.0198,
+        "upshift_count": 5,
+        "upshift_events": [
+          {
+            "lap_progress": 0.384369224,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6624,
+            "speed_kmh": 147.827438
+          },
+          {
+            "lap_progress": 0.39688307,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6411,
+            "speed_kmh": 175.222885
+          },
+          {
+            "lap_progress": 0.412403882,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 7221,
+            "speed_kmh": 184.171051
+          },
+          {
+            "lap_progress": 0.4177417,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 6671,
+            "speed_kmh": 140.9619
+          },
+          {
+            "lap_progress": 0.453132957,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6570,
+            "speed_kmh": 140.821335
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "No Name/Pouhon Entry": {
+        "sample_count": 332,
+        "entry_speed_kmh": 136.401,
+        "exit_speed_kmh": 159.185,
+        "min_speed_kmh": 125.744,
+        "min_speed_distance_m": 3296.582,
+        "max_speed_kmh": 222.959,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 60.475,
+        "max_abs_steer": 0.541,
+        "avg_throttle": 0.7007,
+        "brake_start_distance_m": 3676.252,
+        "heavy_brake_start_distance_m": 3678.609,
+        "brake_end_distance_m": 3757.051,
+        "brake_start_lap_time_ms": 77295,
+        "brake_end_lap_time_ms": 78812,
+        "trail_brake_duration_ms": 1517,
+        "throttle_pickup_distance_m": 3769.505,
+        "full_throttle_distance_m": null,
+        "throttle_pickup_lap_time_ms": 79085,
+        "full_throttle_lap_time_ms": null,
+        "high_steer_throttle_share": 0.0572,
+        "pedal_overlap_share": 0.0181,
+        "upshift_count": 4,
+        "upshift_events": [
+          {
+            "lap_progress": 0.492238134,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6717,
+            "speed_kmh": 177.828888
+          },
+          {
+            "lap_progress": 0.515025735,
+            "gear_from": 0,
+            "gear_to": 5,
+            "rpm": 6781,
+            "speed_kmh": 212.3129
+          },
+          {
+            "lap_progress": 0.5276315,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6873,
+            "speed_kmh": 208.4141
+          },
+          {
+            "lap_progress": 0.533157051,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 7077,
+            "speed_kmh": 175.831329
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Pouhon/Fagnes": {
+        "sample_count": 444,
+        "entry_speed_kmh": 158.94,
+        "exit_speed_kmh": 119.672,
+        "min_speed_kmh": 119.537,
+        "min_speed_distance_m": 4547.423,
+        "max_speed_kmh": 229.32,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 97.905,
+        "max_abs_steer": 0.252,
+        "avg_throttle": 0.7005,
+        "brake_start_distance_m": 4329.687,
+        "heavy_brake_start_distance_m": 4331.412,
+        "brake_end_distance_m": 4422.537,
+        "brake_start_lap_time_ms": 89565,
+        "brake_end_lap_time_ms": 91455,
+        "trail_brake_duration_ms": 1890,
+        "throttle_pickup_distance_m": 4423.799,
+        "full_throttle_distance_m": null,
+        "throttle_pickup_lap_time_ms": 91490,
+        "full_throttle_lap_time_ms": null,
+        "high_steer_throttle_share": 0.0,
+        "pedal_overlap_share": 0.0203,
+        "upshift_count": 4,
+        "upshift_events": [
+          {
+            "lap_progress": 0.5616791,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6448,
+            "speed_kmh": 178.168015
+          },
+          {
+            "lap_progress": 0.5904668,
+            "gear_from": 0,
+            "gear_to": 5,
+            "rpm": 6546,
+            "speed_kmh": 206.0999
+          },
+          {
+            "lap_progress": 0.6209146,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 7048,
+            "speed_kmh": 211.505447
+          },
+          {
+            "lap_progress": 0.6272856,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6350,
+            "speed_kmh": 160.342621
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Campus/Stavelot": {
+        "sample_count": 468,
+        "entry_speed_kmh": 119.865,
+        "exit_speed_kmh": 172.684,
+        "min_speed_kmh": 109.31,
+        "min_speed_distance_m": 4926.23,
+        "max_speed_kmh": 179.568,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 69.203,
+        "max_abs_steer": 0.48,
+        "avg_throttle": 0.7809,
+        "brake_start_distance_m": 4829.887,
+        "heavy_brake_start_distance_m": 4829.887,
+        "brake_end_distance_m": 4893.733,
+        "brake_start_lap_time_ms": 101912,
+        "brake_end_lap_time_ms": 103535,
+        "trail_brake_duration_ms": 1623,
+        "throttle_pickup_distance_m": 4896.888,
+        "full_throttle_distance_m": 4927.334,
+        "throttle_pickup_lap_time_ms": 103640,
+        "full_throttle_lap_time_ms": 104642,
+        "high_steer_throttle_share": 0.0876,
+        "pedal_overlap_share": 0.0085,
+        "upshift_count": 3,
+        "upshift_events": [
+          {
+            "lap_progress": 0.691954434,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 7551,
+            "speed_kmh": 161.414673
+          },
+          {
+            "lap_progress": 0.716966569,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6820,
+            "speed_kmh": 146.9697
+          },
+          {
+            "lap_progress": 0.741527736,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6262,
+            "speed_kmh": 171.917313
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Blanchimont": {
+        "sample_count": 509,
+        "entry_speed_kmh": 172.932,
+        "exit_speed_kmh": 240.912,
+        "min_speed_kmh": 172.932,
+        "min_speed_distance_m": 5200.281,
+        "max_speed_kmh": 249.445,
+        "max_brake": 0.0,
+        "primary_brake_speed_drop_kmh": null,
+        "max_abs_steer": 0.284,
+        "avg_throttle": 0.9833,
+        "brake_start_distance_m": null,
+        "heavy_brake_start_distance_m": null,
+        "brake_end_distance_m": null,
+        "brake_start_lap_time_ms": null,
+        "brake_end_lap_time_ms": null,
+        "trail_brake_duration_ms": null,
+        "throttle_pickup_distance_m": 5200.281,
+        "full_throttle_distance_m": 5200.281,
+        "throttle_pickup_lap_time_ms": 111180,
+        "full_throttle_lap_time_ms": 111180,
+        "high_steer_throttle_share": 0.0,
+        "pedal_overlap_share": 0.0,
+        "upshift_count": 2,
+        "upshift_events": [
+          {
+            "lap_progress": 0.7801902,
+            "gear_from": 0,
+            "gear_to": 5,
+            "rpm": 6502,
+            "speed_kmh": 210.80954
+          },
+          {
+            "lap_progress": 0.8176722,
+            "gear_from": 0,
+            "gear_to": 6,
+            "rpm": 6554,
+            "speed_kmh": 234.044876
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      },
+      "Bus Stop": {
+        "sample_count": 528,
+        "entry_speed_kmh": 241.061,
+        "exit_speed_kmh": 169.762,
+        "min_speed_kmh": 60.78,
+        "min_speed_distance_m": 6742.716,
+        "max_speed_kmh": 252.617,
+        "max_brake": 1.0,
+        "primary_brake_speed_drop_kmh": 180.53,
+        "max_abs_steer": 0.701,
+        "avg_throttle": 0.6861,
+        "brake_start_distance_m": 6549.666,
+        "heavy_brake_start_distance_m": 6551.808,
+        "brake_end_distance_m": 6707.596,
+        "brake_start_lap_time_ms": 132287,
+        "brake_end_lap_time_ms": 136067,
+        "trail_brake_duration_ms": 3780,
+        "throttle_pickup_distance_m": 6708.382,
+        "full_throttle_distance_m": 6744.456,
+        "throttle_pickup_lap_time_ms": 136105,
+        "full_throttle_lap_time_ms": 137932,
+        "high_steer_throttle_share": 0.089,
+        "pedal_overlap_share": 0.0398,
+        "upshift_count": 7,
+        "upshift_events": [
+          {
+            "lap_progress": 0.937759,
+            "gear_from": 0,
+            "gear_to": 5,
+            "rpm": 7008,
+            "speed_kmh": 235.496109
+          },
+          {
+            "lap_progress": 0.943773568,
+            "gear_from": 0,
+            "gear_to": 4,
+            "rpm": 6452,
+            "speed_kmh": 193.102768
+          },
+          {
+            "lap_progress": 0.9485066,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6217,
+            "speed_kmh": 152.943039
+          },
+          {
+            "lap_progress": 0.952774763,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 6023,
+            "speed_kmh": 117.9353
+          },
+          {
+            "lap_progress": 0.9562417,
+            "gear_from": 0,
+            "gear_to": 1,
+            "rpm": 5148,
+            "speed_kmh": 80.85349
+          },
+          {
+            "lap_progress": 0.979741156,
+            "gear_from": 0,
+            "gear_to": 2,
+            "rpm": 6879,
+            "speed_kmh": 112.861336
+          },
+          {
+            "lap_progress": 0.988921046,
+            "gear_from": 0,
+            "gear_to": 3,
+            "rpm": 6495,
+            "speed_kmh": 144.7277
+          }
+        ],
+        "racing_line_delta": {
+          "mean_m": null,
+          "max_m": null
+        }
+      }
+    }
+  }
+}

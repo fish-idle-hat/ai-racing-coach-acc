@@ -1,0 +1,142 @@
+{
+  "schema": "acc_ai_coach_driver_profile_v1",
+  "driver_name": "driver",
+  "created_at": "2026-08-24T23:06:46",
+  "updated_at": "2026-08-26T19:49:01",
+  "sessions": [
+    {
+      "run": "/Users/larryrus/Documents/ChatGPT/ACC AI COACH/runs/app-smoke-test",
+      "created_at": "2026-08-24T23:06:46",
+      "track": "unknown",
+      "car_model": "unknown",
+      "analyzed_laps": 1,
+      "issue_count": 0,
+      "top_issues": [],
+      "prioritized_issues": [],
+      "ignored_small_issues": []
+    },
+    {
+      "run": "/Users/larryrus/Documents/ChatGPT/ACC AI COACH/runs/acc-m5-native-test-1",
+      "created_at": "2026-08-25T14:52:45",
+      "track": "unknown",
+      "car_model": "unknown",
+      "analyzed_laps": 1,
+      "issue_count": 0,
+      "top_issues": [],
+      "prioritized_issues": [],
+      "ignored_small_issues": []
+    },
+    {
+      "run": "runs/self-check-pro-video-smoke",
+      "created_at": "2026-08-26T19:49:01",
+      "track": "Spa",
+      "car_model": "simulated_gt3",
+      "analyzed_laps": 1,
+      "issue_count": 2,
+      "top_issues": [
+        {
+          "zone": "Eau Rouge/Raidillon/Kemmel",
+          "zone_label": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel",
+          "reason": "major_speed_loss",
+          "severity": 173.623,
+          "text": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel: major speed loss detected. Minimum speed dropped to 56 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas.",
+          "source": "major_incident",
+          "lap_number": 1
+        },
+        {
+          "zone": "Blanchimont",
+          "zone_label": "Turns 16, 17 Blanchimont",
+          "reason": "major_speed_loss",
+          "severity": 164.216,
+          "text": "Turns 16, 17 Blanchimont: major speed loss detected. Minimum speed dropped to 81 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas.",
+          "source": "major_incident",
+          "lap_number": 1
+        }
+      ],
+      "prioritized_issues": [
+        {
+          "zone": "Eau Rouge/Raidillon/Kemmel",
+          "zone_label": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel",
+          "reason": "major_speed_loss",
+          "severity": 173.623,
+          "text": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel: major speed loss detected. Minimum speed dropped to 56 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas.",
+          "source": "major_incident",
+          "lap_number": 1,
+          "why": "The car lost abnormal speed in a section that should remain faster, so this is treated before fine lap-time details.",
+          "how_to_fix": "First make the lap valid and stable. Lift earlier if needed, reduce correction, and do not chase throttle until the car is inside track limits.",
+          "classification": "one_time_watchlist",
+          "frequency": 1.0,
+          "opportunities": 1,
+          "priority_score": 1173.623,
+          "session_occurrences": 1
+        },
+        {
+          "zone": "Blanchimont",
+          "zone_label": "Turns 16, 17 Blanchimont",
+          "reason": "major_speed_loss",
+          "severity": 164.216,
+          "text": "Turns 16, 17 Blanchimont: major speed loss detected. Minimum speed dropped to 81 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas.",
+          "source": "major_incident",
+          "lap_number": 1,
+          "why": "The car lost abnormal speed in a section that should remain faster, so this is treated before fine lap-time details.",
+          "how_to_fix": "First make the lap valid and stable. Lift earlier if needed, reduce correction, and do not chase throttle until the car is inside track limits.",
+          "classification": "one_time_watchlist",
+          "frequency": 1.0,
+          "opportunities": 1,
+          "priority_score": 1164.216,
+          "session_occurrences": 1
+        }
+      ],
+      "ignored_small_issues": []
+    }
+  ],
+  "habits": {
+    "spa::simulated_gt3::eau_rouge_raidillon_kemmel::major_speed_loss": {
+      "track": "Spa",
+      "car_model": "simulated_gt3",
+      "zone": "Eau Rouge/Raidillon/Kemmel",
+      "zone_label": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel",
+      "reason": "major_speed_loss",
+      "count": 1,
+      "opportunities": 1,
+      "frequency": 1.0,
+      "classification": "one_time_watchlist",
+      "severity_total": 173.623,
+      "last_seen_at": "2026-08-26T19:49:01",
+      "last_seen_run": "runs/self-check-pro-video-smoke",
+      "latest_text": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel: major speed loss detected. Minimum speed dropped to 56 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas."
+    },
+    "spa::simulated_gt3::blanchimont::major_speed_loss": {
+      "track": "Spa",
+      "car_model": "simulated_gt3",
+      "zone": "Blanchimont",
+      "zone_label": "Turns 16, 17 Blanchimont",
+      "reason": "major_speed_loss",
+      "count": 1,
+      "opportunities": 1,
+      "frequency": 1.0,
+      "classification": "one_time_watchlist",
+      "severity_total": 164.216,
+      "last_seen_at": "2026-08-26T19:49:01",
+      "last_seen_run": "runs/self-check-pro-video-smoke",
+      "latest_text": "Turns 16, 17 Blanchimont: major speed loss detected. Minimum speed dropped to 81 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas."
+    }
+  },
+  "total_analyzed_laps": 3,
+  "current_focus": null,
+  "current_watchlist": {
+    "track": "Spa",
+    "car_model": "simulated_gt3",
+    "zone": "Eau Rouge/Raidillon/Kemmel",
+    "zone_label": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel",
+    "reason": "major_speed_loss",
+    "count": 1,
+    "opportunities": 1,
+    "frequency": 1.0,
+    "classification": "one_time_watchlist",
+    "severity_total": 173.623,
+    "last_seen_at": "2026-08-26T19:49:01",
+    "last_seen_run": "runs/self-check-pro-video-smoke",
+    "latest_text": "Turns 2, 3, 4 Eau Rouge/Raidillon/Kemmel: major speed loss detected. Minimum speed dropped to 56 km/h in a section that should stay fast. Treat that lap as invalid-style first; fix stability before fine reference deltas."
+  }
+}

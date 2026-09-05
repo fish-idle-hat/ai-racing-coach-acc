@@ -1,0 +1,62 @@
+{
+  "track_key": "spa",
+  "name": "Spa-Francorchamps",
+  "lap_length_m": 7004,
+  "notes": "Approximate first-pass braking-zone map for ACC telemetry. Distances are lap-distance ranges inferred from early user captures and should be refined with more clean laps.",
+  "braking_zones": [
+    {
+      "name": "La Source",
+      "start_m": 0,
+      "end_m": 650,
+      "notes": "Hairpin after start/finish."
+    },
+    {
+      "name": "Eau Rouge/Raidillon/Kemmel",
+      "start_m": 650,
+      "end_m": 1800,
+      "notes": "Usually not a normal heavy braking zone in GT3, but useful for lift or confidence analysis later."
+    },
+    {
+      "name": "Les Combes/Malmedy",
+      "start_m": 1800,
+      "end_m": 2600,
+      "notes": "Heavy braking at the end of Kemmel plus the following right-left sequence."
+    },
+    {
+      "name": "Bruxelles",
+      "start_m": 2600,
+      "end_m": 3250,
+      "notes": "Long downhill right-hander."
+    },
+    {
+      "name": "No Name/Pouhon Entry",
+      "start_m": 3250,
+      "end_m": 3800,
+      "notes": "Transition into the high-speed middle sector."
+    },
+    {
+      "name": "Pouhon/Fagnes",
+      "start_m": 3800,
+      "end_m": 4550,
+      "notes": "Fast left and later braking into the Fagnes complex."
+    },
+    {
+      "name": "Campus/Stavelot",
+      "start_m": 4550,
+      "end_m": 5200,
+      "notes": "Exit-critical right-hand sequence before the run to Blanchimont."
+    },
+    {
+      "name": "Blanchimont",
+      "start_m": 5200,
+      "end_m": 6300,
+      "notes": "High-speed section before Bus Stop."
+    },
+    {
+      "name": "Bus Stop",
+      "start_m": 6300,
+      "end_m": 7100,
+      "notes": "Final chicane and major braking zone."
+    }
+  ]
+}

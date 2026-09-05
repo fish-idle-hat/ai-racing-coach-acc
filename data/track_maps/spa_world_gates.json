@@ -1,0 +1,71 @@
+{
+  "track_key": "spa",
+  "source_run": "runs/acc-realtime-voice-1",
+  "notes": "First-pass world-coordinate approach gates extracted from a real ACC Spa run. Runtime should use car_world_x/car_world_z and trigger when entering each gate radius. Coordinates are ACC world coordinates, not image pixels.",
+  "gates": [
+    {
+      "key": "t1",
+      "label": "T1 La Source",
+      "x": -1013.86926,
+      "z": 17.7085056,
+      "radius": 38,
+      "message": "Approaching Turn 1 La Source: brake in one firm hit, release as you turn, delay full throttle until the car points toward exit."
+    },
+    {
+      "key": "t3",
+      "label": "T3 Eau Rouge",
+      "x": -940.8173,
+      "z": 7.17136765,
+      "radius": 34,
+      "message": "Approaching Turn 3 Eau Rouge: after Turn 2, settle the car, hold one steering angle, avoid a panic lift."
+    },
+    {
+      "key": "t5",
+      "label": "T5, T6, T7 Les Combes/Malmedy",
+      "x": -417.9018,
+      "z": 36.0652847,
+      "radius": 45,
+      "message": "Approaching Turn 5, then Turn 6 and Turn 7 Les Combes/Malmedy: brake once at the end of Kemmel, release before turn-in, use the first right-hand apex to set up the left."
+    },
+    {
+      "key": "t8",
+      "label": "T8, T9 Bruxelles",
+      "x": -232.280334,
+      "z": 73.57412,
+      "radius": 42,
+      "message": "Approaching Turn 8, then Turn 9 Bruxelles: keep light brake pressure past turn-in, then wait for rotation before throttle."
+    },
+    {
+      "key": "t10",
+      "label": "T10, T11 No Name",
+      "x": -424.396851,
+      "z": 40.5593224,
+      "radius": 40,
+      "message": "Approaching Turn 10, then Turn 11 No Name: finish the small lift early, then commit with one smooth steering input."
+    },
+    {
+      "key": "t12",
+      "label": "T12, T13 Pouhon/Fagnes",
+      "x": -565.890747,
+      "z": 1.46549845,
+      "radius": 42,
+      "message": "Approaching Turn 12, then Turn 13 Pouhon/Fagnes: keep the first left flowing; do not add throttle if steering is still increasing."
+    },
+    {
+      "key": "t14",
+      "label": "T14, T15 Campus/Stavelot",
+      "x": -1021.3042,
+      "z": -17.5644016,
+      "radius": 45,
+      "message": "Approaching Turn 14, then Turn 15 Campus/Stavelot: sacrifice entry if needed, straighten early, then go full throttle for the long exit."
+    },
+    {
+      "key": "t18",
+      "label": "T18, T19 Bus Stop",
+      "x": -903.370361,
+      "z": -4.031384,
+      "radius": 42,
+      "message": "Approaching Turn 18, then Turn 19 Bus Stop: brake hard while straight, release for rotation, prioritize second apex exit."
+    }
+  ]
+}

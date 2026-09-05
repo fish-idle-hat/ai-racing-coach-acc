@@ -1,0 +1,26 @@
+{
+  "track_key": "spa",
+  "lap_length_m": 7004,
+  "notes": "Approximate turn-level timing windows for ACC Spa. These are finer than broad zones but still need calibration against more clean laps and/or screen/OCR landmarks.",
+  "turns": [
+    {"turn": 1, "name": "La Source", "start_m": 0, "apex_m": 330, "end_m": 650},
+    {"turn": 2, "name": "Eau Rouge entry", "start_m": 650, "apex_m": 820, "end_m": 980},
+    {"turn": 3, "name": "Eau Rouge/Raidillon compression", "start_m": 980, "apex_m": 1120, "end_m": 1280},
+    {"turn": 4, "name": "Raidillon exit", "start_m": 1280, "apex_m": 1450, "end_m": 1800},
+    {"turn": 5, "name": "Les Combes right", "start_m": 1800, "apex_m": 1990, "end_m": 2140},
+    {"turn": 6, "name": "Les Combes left", "start_m": 2140, "apex_m": 2260, "end_m": 2380},
+    {"turn": 7, "name": "Malmedy", "start_m": 2380, "apex_m": 2490, "end_m": 2600},
+    {"turn": 8, "name": "Bruxelles entry", "start_m": 2600, "apex_m": 2840, "end_m": 3020},
+    {"turn": 9, "name": "Bruxelles exit", "start_m": 3020, "apex_m": 3140, "end_m": 3250},
+    {"turn": 10, "name": "No Name entry", "start_m": 3250, "apex_m": 3420, "end_m": 3570},
+    {"turn": 11, "name": "No Name exit", "start_m": 3570, "apex_m": 3680, "end_m": 3800},
+    {"turn": 12, "name": "Pouhon", "start_m": 3800, "apex_m": 4020, "end_m": 4230},
+    {"turn": 13, "name": "Fagnes", "start_m": 4230, "apex_m": 4410, "end_m": 4550},
+    {"turn": 14, "name": "Campus", "start_m": 4550, "apex_m": 4770, "end_m": 4940},
+    {"turn": 15, "name": "Stavelot", "start_m": 4940, "apex_m": 5060, "end_m": 5200},
+    {"turn": 16, "name": "Blanchimont entry", "start_m": 5200, "apex_m": 5550, "end_m": 5850},
+    {"turn": 17, "name": "Blanchimont exit", "start_m": 5850, "apex_m": 6100, "end_m": 6300},
+    {"turn": 18, "name": "Bus Stop entry", "start_m": 6300, "apex_m": 6500, "end_m": 6690},
+    {"turn": 19, "name": "Bus Stop exit", "start_m": 6690, "apex_m": 6840, "end_m": 7100}
+  ]
+}
