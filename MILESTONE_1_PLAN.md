@@ -291,7 +291,7 @@ Validation:
 
 ## Milestone 2E - Adaptive Lap Memory + Focused Reminders
 
-Status: accepted as part of Milestone 2 technical prototype; replay checks passed on `runs/acc-world-corner-test-2`, `runs/acc-realtime-coach-3`, `runs/acc-ai-coach-test-1`, and `runs/acc-coach-decision-test-1`
+Status: accepted as part of Milestone 2 technical prototype; replay checks passed on `runs/acc-world-corner-test-2`, `runs/acc-realtime-coach-3`, `runs/ai-racing-coach-acc-test-1`, and `runs/acc-coach-decision-test-1`
 
 Add the first intelligence layer on top of correct corner timing.
 
@@ -383,7 +383,7 @@ Current limitation:
 
 ## Milestone 3D - Accuracy Lock
 
-Status: complete for the current CrossOver telemetry route; acceptance passed on `runs/acc-ai-coach-test-1` and `runs/acc-coach-decision-test-1`
+Status: complete for the current CrossOver telemetry route; acceptance passed on `runs/ai-racing-coach-acc-test-1` and `runs/acc-coach-decision-test-1`
 
 Purpose:
 
@@ -403,7 +403,7 @@ Current output includes:
 
 Validation:
 
-- `PYTHONPATH=tools python3 tools/validate_milestone_acceptance.py acc-ai-coach-test-1 acc-coach-decision-test-1`
+- `PYTHONPATH=tools python3 tools/validate_milestone_acceptance.py ai-racing-coach-acc-test-1 acc-coach-decision-test-1`
 - Result: both runs passed all Milestone 2 and Milestone 3D checks.
 
 Remaining limitation:

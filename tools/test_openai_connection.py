@@ -7,7 +7,7 @@ from ai_coach import DEFAULT_MODEL, exception_summary, invalid_key_hint
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Test the OpenAI connection for ACC AI Coach.")
+    parser = argparse.ArgumentParser(description="Test the OpenAI connection for AI Racing Coach - ACC.")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     args = parser.parse_args()
 

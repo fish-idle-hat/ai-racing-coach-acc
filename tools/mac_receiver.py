@@ -401,7 +401,7 @@ def normalize_packet(packet):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="ACC AI Coach Milestone 0 UDP telemetry receiver")
+    parser = argparse.ArgumentParser(description="AI Racing Coach - ACC Milestone 0 UDP telemetry receiver")
     parser.add_argument("--host", default="127.0.0.1", help="UDP host to bind")
     parser.add_argument("--port", type=int, default=47777, help="UDP port to bind")
     parser.add_argument("--run-name", default=None, help="Optional run folder name")

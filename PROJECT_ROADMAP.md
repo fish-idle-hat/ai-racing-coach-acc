@@ -1,4 +1,4 @@
-# ACC AI Coach Roadmap
+# AI Racing Coach - ACC Roadmap
 
 This file is the high-level roadmap for the project. Detailed implementation notes for the current prototype remain in `MILESTONE_1_PLAN.md`.
 
@@ -29,7 +29,7 @@ Target outcome:
 
 Build a technical real-time coach before building a full app.
 
-Status: complete for the technical prototype as of the `acc-ai-coach-test-1` and `acc-coach-decision-test-1` acceptance checks.
+Status: complete for the technical prototype as of the `ai-racing-coach-acc-test-1` and `acc-coach-decision-test-1` acceptance checks.
 
 Target outcome:
 

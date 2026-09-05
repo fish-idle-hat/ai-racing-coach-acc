@@ -1,12 +1,24 @@
-# ACC AI Coach
+# AI Racing Coach - ACC
 
-ACC AI Coach is a local macOS training app prototype for Assetto Corsa Competizione. It captures ACC telemetry from a CrossOver/Windows helper, records driving sessions on macOS, and turns the data into live voice coaching, replayable reports, reference-lap comparisons, and a native SwiftUI dashboard.
+AI Racing Coach - ACC is a local macOS training app prototype for Assetto Corsa Competizione. It captures ACC telemetry from a CrossOver/Windows helper, records driving sessions on macOS, and turns the data into live voice coaching, replayable reports, reference-lap comparisons, and a native SwiftUI dashboard.
+
+The goal is simple: help sim racers practice with specific, turn-level feedback from their own driving instead of guessing from generic tutorial videos.
 
 ## Looking For Partners
 
 This project is currently looking for partners who can help improve the remaining coaching mechanisms, especially telemetry calibration, corner-level comparison, personalized coaching logic, setup-coach reasoning, UI polish, and real-driver testing.
 
 See `PARTNERS.md` for the current collaboration areas.
+
+## Why It Matters
+
+Most sim-racing improvement tools either show raw telemetry or require manual post-session review. AI Racing Coach - ACC is aimed at a different workflow: drive laps, hear short coaching cues at the right time, then review a focused training plan after the session.
+
+This makes the project useful for:
+
+- ACC drivers who want faster feedback loops.
+- Coaches who want telemetry-backed student review.
+- Developers interested in local AI, motorsport telemetry, SwiftUI, and game-tooling integrations.
 
 ## Current Status
 
@@ -64,7 +76,7 @@ Build the SwiftUI app bundle:
 The script prints the generated app path, usually:
 
 ```text
-build/ACC AI Coach.app
+build/AI Racing Coach - ACC.app
 ```
 
 Open the app from Finder or Terminal after the build completes.
@@ -122,3 +134,7 @@ ACC in CrossOver -> Windows telemetry helper -> UDP -> macOS coach -> reports/ap
 ```
 
 The remaining work is improving accuracy, product quality, and coaching intelligence. Partner contributions are welcome in those areas.
+
+## Promotion
+
+Shareable project copy, launch-post drafts, and outreach targets are in `PROMOTION.md`.

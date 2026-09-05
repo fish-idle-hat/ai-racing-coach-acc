@@ -26,7 +26,7 @@ enum AppRuntime {
         }
 
         let supportProject = supportBase
-            .appendingPathComponent("ACC AI Coach", isDirectory: true)
+            .appendingPathComponent("AI Racing Coach - ACC", isDirectory: true)
             .appendingPathComponent("AppProject", isDirectory: true)
 
         do {
@@ -419,7 +419,7 @@ final class AppModel: ObservableObject {
     private var tutorialAutoAdvanceWorkItem: DispatchWorkItem?
     private var tutorialSpeechStartWorkItem: DispatchWorkItem?
     private let tutorialCompletedKey = "commercialTutorialCompleted"
-    private let openAIKeychainService = "ACC AI Coach OpenAI API Key"
+    private let openAIKeychainService = "AI Racing Coach - ACC OpenAI API Key"
     private let openAIKeychainAccount = "default"
 
     init() {
@@ -445,7 +445,7 @@ final class AppModel: ObservableObject {
                 eyebrow: "Welcome",
                 title: "Your ACC coaching workspace",
                 body: "This Home page is the control center for Rachel, your current track, driving level, session history, driver curriculum, and latest coaching focus. You can start driving, review sessions, or continue training from here.",
-                voice: "Welcome to ACC AI Coach. This Home page is your coaching workspace. I am Rachel, your private racing coach. From here, you can start a drive, review old sessions, and track your training focus."
+                voice: "Welcome to AI Racing Coach - ACC. This Home page is your coaching workspace. I am Rachel, your private racing coach. From here, you can start a drive, review old sessions, and track your training focus."
             ),
             TutorialStep(
                 id: 1,
@@ -718,7 +718,7 @@ final class AppModel: ObservableObject {
             files = try FileManager.default.contentsOfDirectory(at: runsURL, includingPropertiesForKeys: [.contentModificationDateKey], options: [.skipsHiddenFiles])
         } catch {
             runListStatus = "Could not read runs folder: \(error.localizedDescription). Connect the project folder to restore previous runs."
-            projectDataStatus = "Run history unavailable. Connect your ACC AI Coach project folder."
+            projectDataStatus = "Run history unavailable. Connect your AI Racing Coach - ACC project folder."
             statusMessage = "Run history needs folder access."
             return
         }
@@ -759,7 +759,7 @@ final class AppModel: ObservableObject {
 
     func connectProjectFolder() {
         let panel = NSOpenPanel()
-        panel.title = "Connect ACC AI Coach Project Folder"
+        panel.title = "Connect AI Racing Coach - ACC Project Folder"
         panel.message = "Select the ACC AI COACH project folder that contains tools and runs."
         panel.prompt = "Connect"
         panel.canChooseDirectories = true
@@ -1958,7 +1958,7 @@ struct Sidebar: View {
                             .frame(width: 34, height: 34)
                             .clipShape(RoundedRectangle(cornerRadius: 7))
                     }
-                    Text("ACC AI Coach")
+                    Text("AI Racing Coach - ACC")
                         .font(.title2.bold())
                 }
                 Text("Build 6ZA - Tutorial Speech Gate")

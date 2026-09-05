@@ -199,7 +199,7 @@ def html_page():
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ACC AI Coach</title>
+  <title>AI Racing Coach - ACC</title>
   <style>
     :root {
       color-scheme: dark;
@@ -321,7 +321,7 @@ def html_page():
 <body>
   <nav>
     <div class="stack">
-      <h1>ACC AI Coach</h1>
+      <h1>AI Racing Coach - ACC</h1>
       <div class="status"><span id="statusDot" class="dot"></span><span id="statusText">Checking...</span></div>
       <label class="stack">
         <span class="muted">Run name</span>
@@ -566,12 +566,12 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Milestone 5 local dashboard for ACC AI Coach.")
+    parser = argparse.ArgumentParser(description="Milestone 5 local dashboard for AI Racing Coach - ACC.")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8788)
     args = parser.parse_args()
     server = ThreadingHTTPServer((args.host, args.port), Handler)
-    print(f"ACC AI Coach app: http://{args.host}:{args.port}")
+    print(f"AI Racing Coach - ACC app: http://{args.host}:{args.port}")
     print("Use the dashboard to start/stop Rachel. Run the CrossOver helper separately when prompted.")
     try:
         server.serve_forever()

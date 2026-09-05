@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-APP="$ROOT/build/ACC AI Coach.app"
+APP="$ROOT/build/AI Racing Coach - ACC.app"
 CONTENTS="$APP/Contents"
 MACOS="$CONTENTS/MacOS"
 RESOURCES="$CONTENTS/Resources"
@@ -73,13 +73,13 @@ cat > "$CONTENTS/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
   <key>CFBundleExecutable</key>
-  <string>ACC AI Coach</string>
+  <string>AI Racing Coach - ACC</string>
   <key>CFBundleIdentifier</key>
-  <string>local.acc-ai-coach.prototype</string>
+  <string>local.ai-racing-coach-acc.prototype</string>
   <key>CFBundleName</key>
-  <string>ACC AI Coach</string>
+  <string>AI Racing Coach - ACC</string>
   <key>CFBundleDisplayName</key>
-  <string>ACC AI Coach</string>
+  <string>AI Racing Coach - ACC</string>
   <key>CFBundleIconFile</key>
   <string>AppIcon</string>
   <key>CFBundlePackageType</key>
@@ -93,9 +93,9 @@ cat > "$CONTENTS/Info.plist" <<'PLIST'
   <key>NSHighResolutionCapable</key>
   <true/>
   <key>NSDocumentsFolderUsageDescription</key>
-  <string>ACC AI Coach reads saved telemetry runs and writes coaching reports in the selected or bundled project folder.</string>
+  <string>AI Racing Coach - ACC reads saved telemetry runs and writes coaching reports in the selected or bundled project folder.</string>
   <key>NSDesktopFolderUsageDescription</key>
-  <string>ACC AI Coach may read user-selected screenshots or exported reports when requested.</string>
+  <string>AI Racing Coach - ACC may read user-selected screenshots or exported reports when requested.</string>
 </dict>
 </plist>
 PLIST
@@ -107,7 +107,7 @@ xcrun swiftc \
   -framework SwiftUI \
   -framework AppKit \
   "$ROOT/mac-app/ACC_AI_Coach.swift" \
-  -o "$MACOS/ACC AI Coach"
+  -o "$MACOS/AI Racing Coach - ACC"
 
 codesign --force --deep --sign - "$APP" >/dev/null 2>&1 || true
 

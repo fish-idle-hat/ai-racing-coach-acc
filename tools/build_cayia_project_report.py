@@ -176,7 +176,7 @@ def draw_architecture(path: Path):
     label_font = safe_font(28, True)
     body_font = safe_font(21)
     small_font = safe_font(18)
-    d.text((60, 40), "ACC AI Coach System Architecture", fill="#162033", font=title_font)
+    d.text((60, 40), "AI Racing Coach - ACC System Architecture", fill="#162033", font=title_font)
 
     boxes = [
         (60, 150, 330, 310, "ACC + CrossOver", "Game shared memory\nphysics, graphics,\nlap status"),
@@ -341,7 +341,7 @@ def build_report():
 
     doc = Document()
     style_document(doc)
-    doc.core_properties.title = "ACC AI Coach CAYIA Project Report"
+    doc.core_properties.title = "AI Racing Coach - ACC CAYIA Project Report"
     doc.core_properties.subject = "AI racing coach project report"
     doc.core_properties.author = "Larry / F1SH"
     doc.core_properties.created = datetime.now()
@@ -353,7 +353,7 @@ def build_report():
 
     title = doc.add_paragraph()
     title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = title.add_run("ACC AI Coach")
+    r = title.add_run("AI Racing Coach - ACC")
     r.bold = True
     r.font.size = Pt(30)
     r.font.color.rgb = DARK
@@ -371,11 +371,11 @@ def build_report():
     add_callout(
         doc,
         "Project thesis",
-        "ACC AI Coach reduces the trial-and-error burden of sim racing practice by turning raw telemetry, official lap validity, persistent driver history, and optional pro-video reference data into low-distraction coaching that speaks at the right moment and explains the main lap-time opportunity after each session.",
+        "AI Racing Coach - ACC reduces the trial-and-error burden of sim racing practice by turning raw telemetry, official lap validity, persistent driver history, and optional pro-video reference data into low-distraction coaching that speaks at the right moment and explains the main lap-time opportunity after each session.",
     )
 
     add_heading(doc, "Executive Summary")
-    add_body(doc, "Sim racing drivers often improve by watching long tutorial videos, copying braking markers, and repeatedly testing laps without clear feedback about why time was lost. ACC AI Coach addresses this by building a local Mac application that listens to Assetto Corsa Competizione telemetry in real time, identifies the current Spa turn group, detects official invalid laps and major incidents, and gives short spoken coaching through Rachel, the in-app driving coach.")
+    add_body(doc, "Sim racing drivers often improve by watching long tutorial videos, copying braking markers, and repeatedly testing laps without clear feedback about why time was lost. AI Racing Coach - ACC addresses this by building a local Mac application that listens to Assetto Corsa Competizione telemetry in real time, identifies the current Spa turn group, detects official invalid laps and major incidents, and gives short spoken coaching through Rachel, the in-app driving coach.")
     add_body(doc, "The project began as a feasibility question: can a Mac running ACC through CrossOver provide enough live data for an adaptive coach? The current prototype answers yes. It captures ACC telemetry at racing-useful rates, builds post-session reports, maintains a driver profile, compares recent runs, creates radar-style performance scoring, and can optionally compare the driver against a pro-driver MP4 reference.")
     add_body(doc, "The result is not just a telemetry viewer. It is a coaching workflow: Rachel prioritizes one correction at a time, separates major invalidating events from smaller driving details, remembers recurring weaknesses across sessions, and provides turn-numbered guidance that a driver can act on during the next lap.")
 
@@ -385,7 +385,7 @@ def build_report():
     add_body(doc, "The specific challenge for this project was to build a practical assistant that works in the user's real environment: ACC installed through Steam inside CrossOver on an Apple Silicon Mac. That created an additional technical challenge because ACC is a Windows game while the coaching app is a native Mac application.")
 
     add_heading(doc, "Proposed Solution")
-    add_body(doc, "ACC AI Coach is a native macOS app that connects four layers: telemetry capture, deterministic driving analysis, persistent driver memory, and an app interface for running and reviewing sessions. The app starts a Mac receiver and a CrossOver helper, then displays live packets, coach messages, post-session reports, radar scores, and run history.")
+    add_body(doc, "AI Racing Coach - ACC is a native macOS app that connects four layers: telemetry capture, deterministic driving analysis, persistent driver memory, and an app interface for running and reviewing sessions. The app starts a Mac receiver and a CrossOver helper, then displays live packets, coach messages, post-session reports, radar scores, and run history.")
     add_numbered(doc, [
         "ACC telemetry is captured from the Windows side by a .NET Framework helper running inside the CrossOver bottle.",
         "The helper forwards physics, lap/session metadata, official lap-validity fields, incident evidence, and position fields to macOS over localhost UDP.",
@@ -394,12 +394,12 @@ def build_report():
     ])
 
     doc.add_picture(str(arch), width=Inches(6.5))
-    cap = doc.add_paragraph("Figure 1. ACC AI Coach architecture. ACC telemetry remains authoritative; pro video and optional AI are secondary guidance layers.")
+    cap = doc.add_paragraph("Figure 1. AI Racing Coach - ACC architecture. ACC telemetry remains authoritative; pro video and optional AI are secondary guidance layers.")
     cap.style = doc.styles["Caption"] if "Caption" in [s.name for s in doc.styles] else doc.styles["Normal"]
 
     add_heading(doc, "What Was Created")
     add_bullets(doc, [
-        "A double-clickable native macOS application named ACC AI Coach with a custom app icon and commercial dashboard UI.",
+        "A double-clickable native macOS application named AI Racing Coach - ACC with a custom app icon and commercial dashboard UI.",
         "A CrossOver-compatible Windows helper that reads ACC shared-memory data and forwards it to the Mac coach.",
         "A real-time Rachel voice coach that introduces itself, announces lap state, gives upcoming-corner hints, and summarizes the main correction after a lap.",
         "A post-session Analyze page with radar-style performance scoring, strongest and weakest areas, session history, and report buttons.",
@@ -466,7 +466,7 @@ def build_report():
     add_body(doc, "The app is designed especially for beginner-to-intermediate learning because it avoids overwhelming the driver. It first protects valid laps and stable control, then gradually moves toward faster, more technical analysis such as trail-braking, throttle pickup, and pro-reference comparison.")
 
     add_heading(doc, "Differentiation")
-    add_body(doc, "Many racing tools are telemetry dashboards, overlays, or post-lap analyzers. ACC AI Coach is differentiated by combining a coaching model with local Mac deployment and a persistent driver curriculum. It is not only asking what happened in one lap; it asks what Rachel should teach next, whether the issue is new or recurring, and which smaller issues can be ignored until the main problem is fixed.")
+    add_body(doc, "Many racing tools are telemetry dashboards, overlays, or post-lap analyzers. AI Racing Coach - ACC is differentiated by combining a coaching model with local Mac deployment and a persistent driver curriculum. It is not only asking what happened in one lap; it asks what Rachel should teach next, whether the issue is new or recurring, and which smaller issues can be ignored until the main problem is fixed.")
     add_bullets(doc, [
         "Low-distraction voice coaching instead of requiring the driver to read graphs while driving.",
         "One prioritized correction at a time, preventing the coach from giving too many instructions in one lap.",
@@ -522,13 +522,13 @@ def build_report():
     ])
 
     add_heading(doc, "Conclusion")
-    add_body(doc, "ACC AI Coach demonstrates a practical AI-powered learning assistant for sim racing. The prototype turns live game telemetry into real-time coaching, then converts the session into evidence-based analysis and a training plan. It proves the core technical feasibility on a Mac/CrossOver setup and shows a clear path from a personal learning tool to a polished coaching product.")
-    add_body(doc, "Most importantly, the project addresses the original learning problem: drivers should not need to watch hours of unrelated tutorials and guess which advice applies. ACC AI Coach gives the user specific, turn-level feedback from their own driving and helps them practice one meaningful correction at a time.")
+    add_body(doc, "AI Racing Coach - ACC demonstrates a practical AI-powered learning assistant for sim racing. The prototype turns live game telemetry into real-time coaching, then converts the session into evidence-based analysis and a training plan. It proves the core technical feasibility on a Mac/CrossOver setup and shows a clear path from a personal learning tool to a polished coaching product.")
+    add_body(doc, "Most importantly, the project addresses the original learning problem: drivers should not need to watch hours of unrelated tutorials and guess which advice applies. AI Racing Coach - ACC gives the user specific, turn-level feedback from their own driving and helps them practice one meaningful correction at a time.")
 
     doc.add_section(WD_SECTION.NEW_PAGE)
     add_heading(doc, "Appendix: Selected Evidence Files")
     add_kv_table(doc, [
-        ("Native app", "build/ACC AI Coach.app, version 0.6.15 build 6W"),
+        ("Native app", "build/AI Racing Coach - ACC.app, version 0.6.15 build 6W"),
         ("Main Swift UI", "mac-app/ACC_AI_Coach.swift"),
         ("Realtime coach", "tools/realtime_coach.py"),
         ("Decision logic", "tools/coach_decision.py"),

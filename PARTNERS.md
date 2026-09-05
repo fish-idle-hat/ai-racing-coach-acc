@@ -1,6 +1,6 @@
 # Partner Opportunities
 
-ACC AI Coach is actively looking for partners who can help complete the remaining mechanisms and turn the prototype into a stronger training product.
+AI Racing Coach - ACC is actively looking for partners who can help complete the remaining mechanisms and turn the prototype into a stronger training product.
 
 ## Current Focus
 

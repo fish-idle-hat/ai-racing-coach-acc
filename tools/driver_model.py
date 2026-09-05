@@ -446,7 +446,7 @@ def markdown_summary(profile, session):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Update persistent ACC AI Coach driver profile from a run.")
+    parser = argparse.ArgumentParser(description="Update persistent AI Racing Coach - ACC driver profile from a run.")
     parser.add_argument("run")
     parser.add_argument("--comparison-json", default=None)
     args = parser.parse_args()

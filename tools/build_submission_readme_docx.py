@@ -77,7 +77,7 @@ def style_doc(doc: Document) -> None:
         style.paragraph_format.space_after = Pt(after)
 
     footer = section.footer.paragraphs[0]
-    footer.text = "ACC AI Coach | CAYIA 2026 submission package guide"
+    footer.text = "AI Racing Coach - ACC | CAYIA 2026 submission package guide"
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
     footer.runs[0].font.size = Pt(8.5)
     footer.runs[0].font.color.rgb = MUTED
@@ -87,7 +87,7 @@ def add_title(doc: Document) -> None:
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_after = Pt(2)
-    r = p.add_run("ACC AI Coach")
+    r = p.add_run("AI Racing Coach - ACC")
     r.font.name = "Arial"
     r._element.rPr.rFonts.set(qn("w:ascii"), "Arial")
     r._element.rPr.rFonts.set(qn("w:hAnsi"), "Arial")
@@ -173,7 +173,7 @@ def build() -> None:
 
     doc.add_heading("Overview", level=1)
     doc.add_paragraph(
-        "This folder contains the materials for the CAYIA 2026 submission for ACC AI Coach, "
+        "This folder contains the materials for the CAYIA 2026 submission for AI Racing Coach - ACC, "
         "a Mac desktop prototype that turns Assetto Corsa Competizione telemetry into real-time "
         "racing instruction, post-session analysis, driver progression tracking, and pro-video comparison."
     )
@@ -190,7 +190,7 @@ def build() -> None:
         ("Project Report", "Project Report/ACC_AI_Coach_CAYIA_Project_Report.pdf", "Main required report covering background, solution, outcomes, testing, limitations, and future work."),
         ("Slide Show", "Slide Show/ACC_AI_Coach_CAYIA_Project_Presentation.pptx", "Optional visual presentation of the project story, app workflow, architecture, coaching logic, and roadmap."),
         ("Video Demo", "Video Demo/Video DEMO.MOV", "Optional demo showing the project working. Upload it as a shareable link if the form requires a URL."),
-        ("Prototype App", "Prototype App/ACC AI Coach.app", "Runnable Mac prototype."),
+        ("Prototype App", "Prototype App/AI Racing Coach - ACC.app", "Runnable Mac prototype."),
         ("Prototype App Backup", "Prototype App/ACC_AI_Coach_6ZA_tutorial_speech_gate_20260828.zip", "Packaged backup copy of the app."),
         ("Pro Driver Video", "Testable Pro Driver's Video/[Spa McLaren 720S GT3 EVO video].mp4", "Sample MP4 used by Pro Video Reference."),
     ]
@@ -223,12 +223,12 @@ def build() -> None:
 
     doc.add_heading("How to Use the App", level=1)
     steps = [
-        "Open Prototype App/ACC AI Coach.app.",
+        "Open Prototype App/AI Racing Coach - ACC.app.",
         "If macOS asks for folder access, allow it so the app can read saved runs, write reports, and keep run history.",
         "Make sure CrossOver is installed and the CrossOver bottle is named ACC.",
         "Launch CrossOver, Steam, and Assetto Corsa Competizione.",
         "Enter an ACC driving session, preferably Spa practice mode.",
-        "In ACC AI Coach, open the Drive page.",
+        "In AI Racing Coach - ACC, open the Drive page.",
         "Choose Beginner, Intermediate, or Pro. Beginner is the validated focus for the current prototype.",
         "Click Test Voice to confirm Rachel can speak.",
         "Click Start Coaching and drive normally in ACC.",
@@ -251,7 +251,7 @@ def build() -> None:
 
     doc.add_heading("Source Code and Build Notes", level=1)
     doc.add_paragraph("The app bundle contains source code, helper scripts, data, and build files inside:")
-    add_code_line(doc, "ACC AI Coach.app/Contents/Resources/AppProject")
+    add_code_line(doc, "AI Racing Coach - ACC.app/Contents/Resources/AppProject")
     for item in [
         "mac-app/ACC_AI_Coach.swift - native Mac UI source code",
         "tools/realtime_coach.py - real-time Rachel coaching engine",
@@ -304,7 +304,7 @@ def build() -> None:
 
     doc.add_heading("Short Project Description", level=1)
     doc.add_paragraph(
-        "ACC AI Coach helps sim racers improve faster by replacing hours of manual video watching and self-review "
+        "AI Racing Coach - ACC helps sim racers improve faster by replacing hours of manual video watching and self-review "
         "with a real-time adaptive coach. It captures ACC telemetry from a Windows game running through CrossOver "
         "on a Mac, identifies corner-specific driving problems, explains why time was lost, gives concise voice "
         "guidance through Rachel, builds post-session radar scoring, tracks recurring weaknesses, and can compare "
