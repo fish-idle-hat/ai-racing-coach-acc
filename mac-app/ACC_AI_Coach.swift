@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import AVFoundation
 import UniformTypeIdentifiers
 
 let preferredPython = "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3"
@@ -26,7 +27,7 @@ enum AppRuntime {
         }
 
         let supportProject = supportBase
-            .appendingPathComponent("AI Racing Coach - ACC", isDirectory: true)
+            .appendingPathComponent("ACC AI Coach", isDirectory: true)
             .appendingPathComponent("AppProject", isDirectory: true)
 
         do {
@@ -69,6 +70,24 @@ enum AppRuntime {
     }
 }
 
+enum RachelVoice {
+    private static let presentationVoiceIdentifier = "com.apple.voice.compact.en-US.Samantha"
+    static let liveRate: Float = 0.54
+    static let tutorialRate: Float = 0.50
+
+    static func makeSynthesizer() -> AVSpeechSynthesizer {
+        AVSpeechSynthesizer()
+    }
+
+    static func utterance(_ text: String, rate: Float) -> AVSpeechUtterance {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(identifier: presentationVoiceIdentifier)
+            ?? AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = rate
+        return utterance
+    }
+}
+
 @main
 struct ACCAICoachApp: App {
     @StateObject private var model = AppModel()
@@ -83,7 +102,7 @@ struct ACCAICoachApp: App {
     }
 }
 
-final class ProcessBox: NSObject, ObservableObject, NSSpeechSynthesizerDelegate {
+final class ProcessBox: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var running = false
     @Published var lines: [String] = []
     @Published var lastTelemetryPacketAt: Date?
@@ -91,7 +110,7 @@ final class ProcessBox: NSObject, ObservableObject, NSSpeechSynthesizerDelegate 
     private var process: Process?
     private var pipe: Pipe?
     private var speakTimestampedLines = false
-    private let speaker = NSSpeechSynthesizer()
+    private let speaker = RachelVoice.makeSynthesizer()
     private var outputBuffer = ""
     private var speechQueue: [String] = []
 
@@ -141,7 +160,7 @@ final class ProcessBox: NSObject, ObservableObject, NSSpeechSynthesizerDelegate 
 
     func stop() {
         speechQueue.removeAll()
-        speaker.stopSpeaking()
+        speaker.stopSpeaking(at: .immediate)
         lastTelemetryPacketAt = nil
         guard let process, process.isRunning else {
             running = false
@@ -212,7 +231,7 @@ final class ProcessBox: NSObject, ObservableObject, NSSpeechSynthesizerDelegate 
             speechQueue.removeAll()
             speechQueue.append(voiceText)
             if speaker.isSpeaking {
-                speaker.stopSpeaking()
+                speaker.stopSpeaking(at: .immediate)
                 DispatchQueue.main.async { [weak self] in
                     self?.speakNextIfIdle()
                 }
@@ -232,11 +251,10 @@ final class ProcessBox: NSObject, ObservableObject, NSSpeechSynthesizerDelegate 
     private func speakNextIfIdle() {
         guard !speaker.isSpeaking, !speechQueue.isEmpty else { return }
         let next = speechQueue.removeFirst()
-        speaker.rate = 205
-        speaker.startSpeaking(next)
+        speaker.speak(RachelVoice.utterance(next, rate: RachelVoice.liveRate))
     }
 
-    func speechSynthesizer(_ sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         DispatchQueue.main.async { [weak self] in
             self?.speakNextIfIdle()
         }
@@ -290,6 +308,7 @@ struct SessionAnalysis {
     let completedLaps: Int
     let validLaps: Int
     let invalidLaps: Int
+    let incompleteLaps: Int
     let bestLap: String
 }
 
@@ -415,7 +434,7 @@ final class AppModel: ObservableObject {
 
     let rachel = ProcessBox()
     let helper = ProcessBox()
-    private let testSpeaker = NSSpeechSynthesizer()
+    private let testSpeaker = RachelVoice.makeSynthesizer()
     private var tutorialAutoAdvanceWorkItem: DispatchWorkItem?
     private var tutorialSpeechStartWorkItem: DispatchWorkItem?
     private let tutorialCompletedKey = "commercialTutorialCompleted"
@@ -445,7 +464,7 @@ final class AppModel: ObservableObject {
                 eyebrow: "Welcome",
                 title: "Your ACC coaching workspace",
                 body: "This Home page is the control center for Rachel, your current track, driving level, session history, driver curriculum, and latest coaching focus. You can start driving, review sessions, or continue training from here.",
-                voice: "Welcome to AI Racing Coach - ACC. This Home page is your coaching workspace. I am Rachel, your private racing coach. From here, you can start a drive, review old sessions, and track your training focus."
+                voice: "Welcome to ACC AI Coach. This Home page is your coaching workspace. I am Rachel, your private racing coach. From here, you can start a drive, review old sessions, and track your training focus."
             ),
             TutorialStep(
                 id: 1,
@@ -591,7 +610,7 @@ final class AppModel: ObservableObject {
     func nextTutorialStep() {
         guard tutorialActive else { return }
         cancelTutorialAutoAdvance()
-        testSpeaker.stopSpeaking()
+        testSpeaker.stopSpeaking(at: .immediate)
         if tutorialIndex + 1 >= tutorialSteps.count {
             finishTutorial()
         } else {
@@ -603,7 +622,7 @@ final class AppModel: ObservableObject {
     func previousTutorialStep() {
         guard tutorialActive, tutorialIndex > 0 else { return }
         cancelTutorialAutoAdvance()
-        testSpeaker.stopSpeaking()
+        testSpeaker.stopSpeaking(at: .immediate)
         tutorialIndex -= 1
         applyTutorialStep()
     }
@@ -611,7 +630,7 @@ final class AppModel: ObservableObject {
     func skipTutorial() {
         cancelTutorialAutoAdvance()
         cancelTutorialSpeechStart()
-        testSpeaker.stopSpeaking()
+        testSpeaker.stopSpeaking(at: .immediate)
         tutorialActive = false
         UserDefaults.standard.set(true, forKey: tutorialCompletedKey)
         statusMessage = "Tutorial skipped."
@@ -620,7 +639,7 @@ final class AppModel: ObservableObject {
     func finishTutorial() {
         cancelTutorialAutoAdvance()
         cancelTutorialSpeechStart()
-        testSpeaker.stopSpeaking()
+        testSpeaker.stopSpeaking(at: .immediate)
         tutorialActive = false
         UserDefaults.standard.set(true, forKey: tutorialCompletedKey)
         statusMessage = "Tutorial complete."
@@ -630,7 +649,7 @@ final class AppModel: ObservableObject {
     private func applyTutorialStep() {
         cancelTutorialAutoAdvance()
         cancelTutorialSpeechStart()
-        testSpeaker.stopSpeaking()
+        testSpeaker.stopSpeaking(at: .immediate)
         guard let step = currentTutorialStep else { return }
         tutorialOverlayReady = false
         selectedPage = step.page
@@ -646,15 +665,16 @@ final class AppModel: ObservableObject {
     }
 
     private func speakTutorial(_ text: String, stepID: Int) {
-        testSpeaker.stopSpeaking()
-        testSpeaker.rate = 190
-        testSpeaker.startSpeaking(text)
+        testSpeaker.stopSpeaking(at: .immediate)
+        testSpeaker.speak(RachelVoice.utterance(text, rate: RachelVoice.tutorialRate))
         scheduleTutorialAutoAdvance(for: stepID, extraDelay: 0.18)
     }
 
     private func speakTutorialCompletion() {
-        testSpeaker.rate = 190
-        testSpeaker.startSpeaking("Now the tutorial is all complete. You are ready to start a coached session with Rachel.")
+        testSpeaker.speak(RachelVoice.utterance(
+            "Now the tutorial is all complete. You are ready to start a coached session with Rachel.",
+            rate: RachelVoice.tutorialRate
+        ))
     }
 
     private func scheduleTutorialAutoAdvance(for stepID: Int, extraDelay: Double = 0) {
@@ -718,7 +738,7 @@ final class AppModel: ObservableObject {
             files = try FileManager.default.contentsOfDirectory(at: runsURL, includingPropertiesForKeys: [.contentModificationDateKey], options: [.skipsHiddenFiles])
         } catch {
             runListStatus = "Could not read runs folder: \(error.localizedDescription). Connect the project folder to restore previous runs."
-            projectDataStatus = "Run history unavailable. Connect your AI Racing Coach - ACC project folder."
+            projectDataStatus = "Run history unavailable. Connect your ACC AI Coach project folder."
             statusMessage = "Run history needs folder access."
             return
         }
@@ -759,7 +779,7 @@ final class AppModel: ObservableObject {
 
     func connectProjectFolder() {
         let panel = NSOpenPanel()
-        panel.title = "Connect AI Racing Coach - ACC Project Folder"
+        panel.title = "Connect ACC AI Coach Project Folder"
         panel.message = "Select the ACC AI COACH project folder that contains tools and runs."
         panel.prompt = "Connect"
         panel.canChooseDirectories = true
@@ -838,6 +858,8 @@ final class AppModel: ObservableObject {
             statusMessage = "Rachel and telemetry helper are running."
             writeRunMetadata(runName: sanitized, track: track, level: selectedMode)
         } catch {
+            rachel.stop()
+            helper.stop()
             statusMessage = "Start failed: \(error.localizedDescription)"
         }
     }
@@ -855,10 +877,12 @@ final class AppModel: ObservableObject {
     }
 
     func testVoice() {
-        testSpeaker.stopSpeaking()
-        testSpeaker.rate = 205
-        let started = testSpeaker.startSpeaking("Hi, I am Rachel. Voice output is working from the native app.")
-        statusMessage = started ? "Voice test started." : "Voice test failed."
+        testSpeaker.stopSpeaking(at: .immediate)
+        testSpeaker.speak(RachelVoice.utterance(
+            "Hi, I am Rachel. Voice output is working from the native app.",
+            rate: RachelVoice.liveRate
+        ))
+        statusMessage = "Voice test started."
     }
 
     func generateReplay() {
@@ -1195,6 +1219,7 @@ final class AppModel: ObservableObject {
             completedLaps: laps["completed"] as? Int ?? 0,
             validLaps: laps["valid"] as? Int ?? 0,
             invalidLaps: laps["invalid"] as? Int ?? 0,
+            incompleteLaps: laps["incomplete"] as? Int ?? 0,
             bestLap: laps["best_lap_display"] as? String ?? "n/a"
         )
     }
@@ -1333,6 +1358,7 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             Sidebar()
+                .navigationSplitViewColumnWidth(min: 260, ideal: 300, max: 360)
         } detail: {
             ZStack {
                 AppTheme.background.ignoresSafeArea()
@@ -1371,6 +1397,7 @@ struct ContentView: View {
             TutorialOverlay(anchors: anchors)
                 .environmentObject(model)
         }
+        .toolbar(removing: .sidebarToggle)
         .coordinateSpace(name: "TutorialRoot")
         .onAppear {
             model.triggerFirstRunTutorialIfNeeded()
@@ -1958,8 +1985,10 @@ struct Sidebar: View {
                             .frame(width: 34, height: 34)
                             .clipShape(RoundedRectangle(cornerRadius: 7))
                     }
-                    Text("AI Racing Coach - ACC")
+                    Text("ACC AI Coach")
                         .font(.title2.bold())
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.82)
                 }
                 Text("Build 6ZA - Tutorial Speech Gate")
                     .font(.caption2)
@@ -2083,7 +2112,7 @@ struct RunRow: View {
                 if run.hasDecision { Image(systemName: "checkmark.seal.fill").foregroundStyle(AppTheme.green) }
                 if run.hasProfile { Image(systemName: "person.crop.circle.badge.checkmark").foregroundStyle(AppTheme.cyan) }
                 if run.hasReplay { Image(systemName: "doc.text.fill").foregroundStyle(AppTheme.gold) }
-                if run.hasSessionSummary { Image(systemName: "chart.hexagonpath.fill").foregroundStyle(AppTheme.yellow) }
+                if run.hasSessionSummary { Image(systemName: "chart.bar.fill").foregroundStyle(AppTheme.yellow) }
             }
             .font(.caption)
             .foregroundStyle(.secondary)
@@ -2478,7 +2507,7 @@ struct HomeView: View {
     var body: some View {
         TutorialPageScrollView(page: .home) {
             VStack(alignment: .leading, spacing: 18) {
-                PageHeader(title: "AI Racing Coach", subtitle: "Spa beginner coaching workspace", icon: "flag.checkered")
+                PageHeader(title: "ACC AI Coach", subtitle: "Spa beginner coaching workspace", icon: "flag.checkered")
 
                 DashboardHero()
 
@@ -2733,7 +2762,7 @@ struct DriveView: View {
                 HStack(spacing: 14) {
                     MetricTile(label: "Mode", value: model.selectedMode, icon: "dial.medium", tint: AppTheme.gold)
                     MetricTile(label: "Track", value: model.detectedTrack, icon: "map", tint: AppTheme.cyan)
-                    MetricTile(label: "Analysis", value: model.isAnalyzing ? "Building" : "Ready", icon: "chart.hexagonpath", tint: model.isAnalyzing ? AppTheme.yellow : AppTheme.green)
+                    MetricTile(label: "Analysis", value: model.isAnalyzing ? "Building" : "Ready", icon: "waveform.path.ecg", tint: model.isAnalyzing ? AppTheme.yellow : AppTheme.green)
                     MetricTile(label: "AI", value: model.openAIEnabled ? "Enabled" : "Local", icon: "brain.head.profile", tint: model.openAIEnabled ? AppTheme.green : AppTheme.gold)
                 }
 
@@ -2882,7 +2911,7 @@ struct AnalyzeView: View {
                 PageHeader(title: "Analyze", subtitle: model.selectedRun?.name ?? "Select a run", icon: "waveform.path.ecg.rectangle")
                 HStack(spacing: 14) {
                     MetricTile(label: "Packets", value: "\(model.selectedRun?.packets ?? 0)", icon: "dot.radiowaves.left.and.right")
-                    MetricTile(label: "Score", value: model.selectedRun?.score.map { "\($0)" } ?? "Pending", icon: "chart.hexagonpath", tint: model.selectedRun?.score == nil ? AppTheme.yellow : AppTheme.green)
+                    MetricTile(label: "Score", value: model.selectedRun?.score.map { "\($0)" } ?? "Pending", icon: "chart.bar.fill", tint: model.selectedRun?.score == nil ? AppTheme.yellow : AppTheme.green)
                     MetricTile(label: "Track", value: model.selectedRun?.track ?? "Unknown", icon: "map", tint: AppTheme.cyan)
                     MetricTile(label: "Decision", value: model.selectedRun?.hasDecision == true ? "Ready" : "Missing", icon: "checkmark.seal", tint: model.selectedRun?.hasDecision == true ? AppTheme.green : AppTheme.gold)
                 }
@@ -2896,7 +2925,7 @@ struct AnalyzeView: View {
                         .buttonStyle(ActionButtonStyle())
                     Button { model.generateAICoach() } label: { Label("AI Coach", systemImage: "brain.head.profile") }
                         .buttonStyle(ActionButtonStyle(prominent: true))
-                    Button { model.generateSessionSummary() } label: { Label("Session Summary", systemImage: "chart.hexagonpath") }
+                    Button { model.generateSessionSummary() } label: { Label("Session Summary", systemImage: "chart.bar.fill") }
                         .buttonStyle(ActionButtonStyle(prominent: true))
                     Button { model.openRadar() } label: { Label("Show Radar", systemImage: "hexagon") }
                         .buttonStyle(ActionButtonStyle())
@@ -2940,11 +2969,19 @@ struct AnalysisSummaryStrip: View {
                 Text("Session Snapshot")
                     .font(.headline)
                 if let analysis = model.sessionAnalysis {
-                    HStack(spacing: 12) {
-                        SnapshotPill(label: "Completed", value: "\(analysis.completedLaps)")
-                        SnapshotPill(label: "Valid", value: "\(analysis.validLaps)")
-                        SnapshotPill(label: "Invalid", value: "\(analysis.invalidLaps)")
-                        SnapshotPill(label: "Best", value: analysis.bestLap)
+                    ViewThatFits(in: .horizontal) {
+                        snapshotRow(analysis)
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack(spacing: 8) {
+                                SnapshotPill(label: "Completed", value: "\(analysis.completedLaps)")
+                                SnapshotPill(label: "Valid", value: "\(analysis.validLaps)")
+                                SnapshotPill(label: "Invalid", value: "\(analysis.invalidLaps)")
+                            }
+                            HStack(spacing: 8) {
+                                SnapshotPill(label: "Incomplete", value: "\(analysis.incompleteLaps)")
+                                SnapshotPill(label: "Best", value: analysis.bestLap)
+                            }
+                        }
                     }
                 } else {
                     Text("Generate Session Summary to populate session scoring and lap details.")
@@ -2967,6 +3004,16 @@ struct AnalysisSummaryStrip: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .appPanel()
+    }
+
+    private func snapshotRow(_ analysis: SessionAnalysis) -> some View {
+        HStack(spacing: 8) {
+            SnapshotPill(label: "Completed", value: "\(analysis.completedLaps)")
+            SnapshotPill(label: "Valid", value: "\(analysis.validLaps)")
+            SnapshotPill(label: "Invalid", value: "\(analysis.invalidLaps)")
+            SnapshotPill(label: "Incomplete", value: "\(analysis.incompleteLaps)")
+            SnapshotPill(label: "Best", value: analysis.bestLap)
+        }
     }
 }
 
@@ -3010,7 +3057,7 @@ struct RadarAnalysisPanel: View {
                         .frame(width: 310, height: 280)
                 } else {
                     VStack(spacing: 12) {
-                        Image(systemName: "chart.hexagonpath")
+                        Image(systemName: "chart.bar.fill")
                             .font(.system(size: 42, weight: .semibold))
                             .foregroundStyle(AppTheme.gold)
                         Text("Generate Session Summary to show the radar inside the app.")
@@ -3301,7 +3348,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Build")
                     .font(.headline)
-                Text("6Z - makes tutorial transitions faster and more consistent while preserving the folder-access fix")
+                Text("6ZA - tutorial speech gate, presentation voice, and stable folder access")
                     .foregroundStyle(.secondary)
             }
             .appPanel()

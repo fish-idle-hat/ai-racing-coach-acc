@@ -29,6 +29,10 @@ SPA_MAP_PATH = TRACK_MAPS_DIR / "spa.json"
 SPA_WORLD_GATES_PATH = TRACK_MAPS_DIR / "spa_world_gates.json"
 SPA_WORLD_PATH_PATH = TRACK_MAPS_DIR / "spa_world_path.json"
 PRO_VIDEO_LATEST_PATH = ROOT / "data" / "pro_video_references" / "latest_pro_video_reference.json"
+INTRO_COLLECTION_MESSAGE = (
+    "I will be observing and collecting data from now, and for the best results, "
+    "it would take approximately 2 laps. Go ahead!"
+)
 
 
 def now_stamp():
@@ -1605,6 +1609,7 @@ class RealtimeCoach:
         intro = self.intro_message(row, speed)
         if intro:
             messages.append(intro)
+            messages.append(INTRO_COLLECTION_MESSAGE)
 
         if lap_transition is not None:
             self.finish_zone()

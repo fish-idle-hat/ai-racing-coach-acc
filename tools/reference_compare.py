@@ -1107,7 +1107,12 @@ def main():
         if reference is None:
             reference = REFERENCES_DIR / f"{slug(first_non_empty(rows, 'track') or 'Spa')}_{slug(first_non_empty(rows, 'car_model'))}_personal_best.json"
         if not Path(reference).exists():
-            raise SystemExit(f"Reference not found: {reference}. Run the build command first.")
+            if args.reference is not None:
+                raise SystemExit(f"Reference not found: {reference}. Run the build command first.")
+            reference, built_reference, profile_count = build_reference([run_dir], reference)
+            print(f"Created first matching reference: {reference}")
+            print(f"Best lap: {built_reference['lap_time_display']} from {built_reference['source_run']} lap {built_reference['source_lap_number']}")
+            print(f"Valid candidate laps searched: {profile_count}")
         json_path, md_path, result = compare_run(reference, run_dir)
         update_plan_file()
         print(f"Comparison JSON: {json_path}")

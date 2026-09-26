@@ -6,6 +6,8 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
+from reference_compare import completed_lap_segments, lap_summary, load_rows
+
 ROOT = Path(__file__).resolve().parents[1]
 RUNS_DIR = ROOT / "runs"
 
@@ -28,16 +30,21 @@ def first_track(summary, reference):
     return reference.get("track") or "Unknown"
 
 
-def lap_stats(reference):
+def lap_stats(reference, run_dir):
     laps = reference.get("laps_detected") or []
+    if not laps and (run_dir / "telemetry.csv").exists():
+        rows = load_rows(run_dir)
+        laps = [lap_summary(segment, rows) for segment in completed_lap_segments(rows)]
     completed = [lap for lap in laps if lap.get("completed_by_position_wrap")]
     valid = [lap for lap in completed if lap.get("valid_for_reference")]
     invalid = [lap for lap in completed if not lap.get("valid_for_reference")]
+    incomplete = [lap for lap in laps if not lap.get("completed_by_position_wrap")]
     best = min((lap.get("lap_time_ms") for lap in valid if lap.get("lap_time_ms")), default=None)
     return {
         "completed": len(completed),
         "valid": len(valid),
         "invalid": len(invalid),
+        "incomplete": len(incomplete),
         "best_lap_ms": best,
         "best_lap_display": format_lap_time(best) if best else "n/a",
     }
@@ -89,8 +96,7 @@ def collect_issues(decisions, reference):
     return issues
 
 
-def score_categories(summary, reference, issues):
-    lap_info = lap_stats(reference)
+def score_categories(summary, lap_info, issues):
     packets_ok = 1 if summary.get("packet_count", 0) > 0 else 0
     timing_health = summary.get("receiver_timing_health") or {}
     telemetry_score = 96 if packets_ok and timing_health.get("intervals_over_0_5s", 0) == 0 else 74
@@ -247,7 +253,7 @@ def markdown_report(result):
         f"Created: {result['created_at']}",
         "",
         f"Overall score: **{result['overall_score']}/100**",
-        f"Completed laps: {result['laps']['completed']} | Valid laps: {result['laps']['valid']} | Best lap: {result['laps']['best_lap_display']}",
+        f"Completed laps: {result['laps']['completed']} | Valid laps: {result['laps']['valid']} | Invalid laps: {result['laps']['invalid']} | Incomplete laps: {result['laps']['incomplete']} | Best lap: {result['laps']['best_lap_display']}",
         "",
         "## Scores",
         "",
@@ -280,7 +286,8 @@ def build_summary(run_dir, driving_level="Unknown"):
     reference = read_json(run_dir / "reference_comparison.json", {})
     track = first_track(summary, reference)
     issues = collect_issues(decisions, reference)
-    scores = score_categories(summary, reference, issues)
+    laps = lap_stats(reference, run_dir)
+    scores = score_categories(summary, laps, issues)
     overall = round(sum(scores.values()) / len(scores))
     strongest, weakest = strongest_weakest(scores)
     recommendations = prioritized_recommendations(issues, reference)
@@ -294,7 +301,7 @@ def build_summary(run_dir, driving_level="Unknown"):
         "driving_level": driving_level,
         "overall_score": overall,
         "scores": scores,
-        "laps": lap_stats(reference),
+        "laps": laps,
         "strongest_areas": strongest,
         "weakest_areas": weakest,
         "recommendations": recommendations,
